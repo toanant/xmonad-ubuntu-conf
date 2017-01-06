@@ -211,6 +211,13 @@ myKeyBindings =
     , ((0, 0x1008FF12), spawn "amixer -q set Master toggle")
     , ((0, 0x1008FF11), spawn "amixer -q set Master 10%-")
     , ((0, 0x1008FF13), spawn "amixer -q set Master 10%+")
+
+        -- screenlock
+    , ((myModMask .|. mod1Mask, xK_l     ), spawn "xscreensaver-command -lock")
+
+    -- suspend
+    , ((myModMask .|. mod1Mask, xK_s     ), spawn "dbus-send --system --print-reply --dest=\"org.freedesktop.UPower\" /org/freedesktop/UPower org.freedesktop.UPower.Suspend")
+
   ]
 
 
